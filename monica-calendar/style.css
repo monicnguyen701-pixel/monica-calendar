@@ -1,0 +1,111 @@
+/* Import Quicksand font từ Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+/* Xóa bỏ khoảng cách mặc định của trình duyệt */
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+}
+
+/* Thùng chứa toàn bộ giao diện app - Cute Pink Bear Style */
+.app-container {
+    position: relative;
+    width: 214px;
+    height: 228px;
+    background: linear-gradient(135deg, #fff5f8 0%, #fffbf0 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.2);
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    -webkit-app-region: drag;
+}
+
+/* Tai gấu trái - Bigger & Seamlessly Integrated */
+.app-container::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    background: linear-gradient(135deg, #fff5f8 0%, #fffbf0 100%);
+    border-radius: 50% 50% 40% 40%;
+    top: -25px;
+    left: 30px;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.15);
+    -webkit-app-region: no-drag;
+}
+
+/* Tai gấu phải - Bigger & Seamlessly Integrated */
+.app-container::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    background: linear-gradient(135deg, #fff5f8 0%, #fffbf0 100%);
+    border-radius: 50% 50% 40% 40%;
+    top: -25px;
+    right: 30px;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.15);
+    -webkit-app-region: no-drag;
+}
+
+/* Định dạng cho thẻ h1 (ngày) */
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 48px;
+    font-weight: 700;
+    color: #ff69b4;
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(255, 105, 180, 0.1);
+}
+
+/* Định dạng cho thẻ h2 (tháng) */
+h2 {
+    margin: 8px 0 0 0;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #d9739d;
+    letter-spacing: 0.5px;
+}
+
+/* Cute Button Styling */
+.cute-button {
+    margin-top: 12px;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #ffb6d9 0%, #ffc0cb 100%);
+    border: 2px solid #ff69b4;
+    border-radius: 25px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+    -webkit-app-region: no-drag;
+}
+
+.cute-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(255, 105, 180, 0.4);
+    background: linear-gradient(135deg, #ff99cc 0%, #ffb3d9 100%);
+}
+
+.cute-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(255, 105, 180, 0.3);
+}
+
+/* CHẶN KÉO THẢ TRÊN CÁC NÚT BấM, CHỮ HOẶC THÀNH PHẦN TươNG TÁC */
+button, input, a, h1, p, span, h2 {
+    -webkit-app-region: no-drag; 
+}
