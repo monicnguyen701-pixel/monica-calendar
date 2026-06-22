@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <button class="close-widget-btn" id="close-widget-btn" aria-label="Close widget">&times;</button>
+        
+        <!-- Top Section: Month & Year -->
+        <div class="calendar-top" id="calendar-top">MAY 2026</div>
+        
+        <!-- Middle Section: Cute Illustration -->
+        <div class="calendar-image-container">
+            <img id="calendar-image" src="" alt="Cute illustration">
+        </div>
+        
+        <!-- Date Section: Weekday & Date number -->
+        <div class="calendar-date-container">
+            <div class="calendar-weekday" id="calendar-weekday">Saturday</div>
+            <h1 id="current-date">30</h1>
+        </div>
+        
+        <!-- Button Section -->
+        <button class="cute-button" id="click-me-btn">Click Me</button>
+
+        <!-- Modal overlay for motivational messages -->
+        <div class="modal-overlay" id="message-modal">
+            <div class="modal-content">
+                <p id="modal-text">Thông điệp của bạn sẽ xuất hiện ở đây!</p>
+                <button class="modal-close-btn" id="close-modal-btn">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

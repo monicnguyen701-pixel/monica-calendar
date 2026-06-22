@@ -270,5 +270,8 @@ const motivationalMessages = [
     "Hãy sống một cuộc đời không có giới hạn cho sự tử tế.",
     "Niềm tin có thể dời non lấp bể, hãy luôn tin vào chính mình.",
     "Hãy mỉm cười chào ngày mới, những điều kỳ diệu đang chờ đợi bạn.",
-    "Bạn chính là kiệt tác tuyệt vời nhất của cuộc đời này!"
 ];
+
+if (typeof module !== 'undefined') {
+    module.exports = motivationalMessages;
+}

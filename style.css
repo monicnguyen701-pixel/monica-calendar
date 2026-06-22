@@ -1,0 +1,239 @@
+/* Import Quicksand font từ Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+/* Xóa bỏ khoảng cách mặc định của trình duyệt */
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+}
+
+/* Thùng chứa toàn bộ giao diện app - Cute Pink Bear Style */
+.app-container {
+    position: relative;
+    width: 220px;
+    height: 320px;
+    background: linear-gradient(135deg, #fff5f8 0%, #fffbf0 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.2);
+    box-sizing: border-box;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    -webkit-app-region: drag;
+}
+
+
+/* Top Section: Month & Year */
+.calendar-top {
+    font-size: 11px;
+    font-weight: 700;
+    color: #7d7d7d;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 2px;
+    -webkit-app-region: no-drag;
+}
+
+/* Middle Section: Cute Illustration */
+.calendar-image-container {
+    width: 100%;
+    height: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 6px 0;
+    -webkit-app-region: no-drag;
+}
+
+.calendar-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+/* Date Section Container */
+.calendar-date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2px 0;
+    -webkit-app-region: no-drag;
+}
+
+/* Weekday label */
+.calendar-weekday {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ff69b4;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+}
+
+/* Date number (h1) */
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 52px;
+    font-weight: 700;
+    color: #ff69b4;
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(255, 105, 180, 0.1);
+}
+
+/* Cute Button Styling */
+.cute-button {
+    margin-top: 12px;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #ffb6d9 0%, #ffc0cb 100%);
+    border: 2px solid #ff69b4;
+    border-radius: 25px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+    -webkit-app-region: no-drag;
+}
+
+.cute-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(255, 105, 180, 0.4);
+    background: linear-gradient(135deg, #ff99cc 0%, #ffb3d9 100%);
+}
+
+.cute-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(255, 105, 180, 0.3);
+}
+
+/* Modal overlay styling */
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 245, 248, 0.98);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 15px;
+    box-sizing: border-box;
+    -webkit-app-region: no-drag;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #d9739d;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(255, 105, 180, 0.1);
+}
+
+.modal-close-btn {
+    padding: 6px 16px;
+    background: linear-gradient(135deg, #ffb6d9 0%, #ffc0cb 100%);
+    border: 1.5px solid #ff69b4;
+    border-radius: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(255, 105, 180, 0.2);
+    transition: all 0.2s ease;
+    -webkit-app-region: no-drag;
+}
+
+.modal-close-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff99cc 0%, #ffb3d9 100%);
+}
+
+.modal-close-btn:active {
+    transform: scale(0.95);
+}
+
+/* Close Widget Button styling */
+.close-widget-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff0f5;
+    border: 1.5px solid #ff69b4;
+    color: #ff69b4;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(255, 105, 180, 0.1);
+    transition: all 0.2s ease;
+    -webkit-app-region: no-drag;
+    padding: 0;
+    line-height: 1;
+    z-index: 5;
+}
+
+.close-widget-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.25);
+    background-color: #ffe4e1;
+}
+
+.close-widget-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 4px rgba(255, 105, 180, 0.15);
+}
+
+.close-widget-btn:focus-visible {
+    outline: 2px solid #ff69b4;
+    outline-offset: 2px;
+}
+
+/* CHẶN KÉO THẢ TRÊN CÁC NÚT BấM, CHỮ HOẶC THÀNH PHẦN TươNG TÁC */
+button,
+input,
+a,
+h1,
+p,
+span,
+h2 {
+    -webkit-app-region: no-drag;
+}
